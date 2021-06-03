@@ -49,7 +49,7 @@ router.patch("/storage", function (req, res, next) {
       return item.id == req.userid;
     });
     let oldData = userStorage.data.find(item=>item.id == req.body.id);
-    userStorage.data = userStorage.data.filter(item=>{item.id!=req.body.id})
+    userStorage.data = userStorage.data.filter(item=>item.id!=req.body.id)
 
     oldData = { ...oldData, ...req.body.UpdateData, id: req.body.id}; 
     userStorage.data.push(oldData)
