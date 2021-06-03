@@ -64,7 +64,7 @@ router.delete("/storage", function (req, res, next) {
     let userStorage = ObjectStorage.storage.find((item) => {
       return item.id == req.userid;
     });
-    userStorage.data = userStorage.data.filter(item=>{item.id!=req.body.id})
+    userStorage.data = userStorage.data.filter(item=>item.id!=req.body.id)
 
     res.json({ message: "data deleted successfully" });
   } else {
