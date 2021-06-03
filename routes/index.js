@@ -35,7 +35,7 @@ router.post("/storage", function (req, res, next) {
       return item.id == req.userid;
     });
     console.log(req.userid, userStorage);
-    userStorage.data = [{ ...userStorage.data, ...req.body.data }];
+    userStorage.data = [userStorage.data, ...req.body.data ];
 
     res.json({ message: "data added successfully" });
   } else {
